@@ -1,18 +1,18 @@
-import { Fix, fix } from '../src'
-import { Functor1 } from 'fp-ts/lib/Functor'
+import { Fix, fix } from "../src"
+import { Functor1 } from "fp-ts/lib/Functor"
 
-declare module 'fp-ts/lib/HKT' {
-  interface URI2HKT<A> {
+declare module "fp-ts/lib/HKT" {
+  interface URItoKind<A> {
     Expr: ExprF<A>
   }
 }
 
-export const URI = 'Expr'
+export const URI = "Expr"
 
 export type URI = typeof URI
 
 export class Const<A> {
-  readonly _tag: 'Const' = 'Const'
+  readonly _tag: "Const" = "Const"
   // prettier-ignore
   readonly '_A': A
   // prettier-ignore
@@ -24,7 +24,7 @@ export class Const<A> {
 }
 
 export class Add<A> {
-  readonly _tag: 'Add' = 'Add'
+  readonly _tag: "Add" = "Add"
   // prettier-ignore
   readonly '_A': A
   // prettier-ignore
@@ -36,7 +36,7 @@ export class Add<A> {
 }
 
 export class Mul<A> {
-  readonly _tag: 'Mul' = 'Mul'
+  readonly _tag: "Mul" = "Mul"
   // prettier-ignore
   readonly '_A': A
   // prettier-ignore
@@ -67,5 +67,5 @@ export const functorExpr: Functor1<URI> = {
   URI,
   map<A, B>(expr: ExprF<A>, f: (a: A) => B): ExprF<B> {
     return expr.map(f)
-  }
+  },
 }
