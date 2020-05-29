@@ -1,6 +1,6 @@
-import { HKT, URIS, URIS2, URIS3, Kind, Kind2, Kind3 } from "fp-ts/lib/HKT"
-import { Functor, Functor1, Functor2, Functor3 } from "fp-ts/lib/Functor"
-import { flow } from "fp-ts/lib/function"
+import { HKT, URIS, URIS2, URIS3, Kind, Kind2, Kind3 } from 'fp-ts/lib/HKT'
+import { Functor, Functor1, Functor2, Functor3 } from 'fp-ts/lib/Functor'
+import { flow } from 'fp-ts/lib/function'
 
 export class Fix<F> {
   constructor(public readonly value: HKT<F, Fix<F>>) {}

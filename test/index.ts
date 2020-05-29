@@ -132,9 +132,10 @@ describe('hylo', () => {
       }
     }
     const xs = [1, 4, 3, 2]
-    const as = hylo(functorTree)((tree: TreeF<number, Array<number>>) => alg(tree), (xs: Array<number>) => coalg(xs))(
-      xs
-    )
+    const as = hylo(functorTree)(
+      (tree: TreeF<number, Array<number>>) => alg(tree),
+      (xs: Array<number>) => coalg(xs),
+    )(xs)
     assert.deepEqual(as, [1, 2, 3, 4])
   })
 })

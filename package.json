@@ -10,10 +10,11 @@
   "scripts": {
     "lint": "tslint src/**/*.ts test/**/*.ts",
     "mocha": "mocha -r ts-node/register test/*.ts",
-    "prettier": "prettier --no-semi --single-quote --print-width 120 --parser typescript --list-different \"{src,test}/**/*.ts\"",
+    "prettier": "prettier --no-semi --single-quote --print-width 160 --parser typescript --list-different \"{src,test}/**/*.ts\"",
     "test": "npm run prettier && npm run lint && npm run mocha",
-    "clean": "rm -rf lib/*",
-    "build": "npm run clean && tsc"
+    "clean": "rimraf lib/",
+    "build": "npm run clean && tsc",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -33,10 +34,11 @@
     "@types/node": "7.0.4",
     "mocha": "^7.2.0",
     "prettier": "^1.19.1",
-    "ts-node": "^3.3.0",
-    "tslint": "^5.20.1",
+    "rimraf": "^3.0.2",
+    "ts-node": "^8.0.2",
+    "tslint": "5.11.0",
     "tslint-config-standard": "4.0.0",
-    "typescript": "^2.9.2"
+    "typescript": "^3.9.2"
   },
   "tags": [
     "typescript",

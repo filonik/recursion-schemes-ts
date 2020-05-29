@@ -1,19 +1,19 @@
-import { Fix, fix } from "../src"
-import { Functor1 } from "fp-ts/lib/Functor"
+import { Fix, fix } from '../src'
+import { Functor1 } from 'fp-ts/lib/Functor'
 
-declare module "fp-ts/lib/HKT" {
+declare module 'fp-ts/lib/HKT' {
   interface URItoKind<A> {
     Nat: NatF<A>
   }
 }
 
-export const URI = "Nat"
+export const URI = 'Nat'
 
 export type URI = typeof URI
 
 export class Zero<A> {
   static value = new Zero<any>()
-  readonly _tag: "Zero" = "Zero"
+  readonly _tag: 'Zero' = 'Zero'
   // prettier-ignore
   readonly '_A': A
   // prettier-ignore
@@ -25,7 +25,7 @@ export class Zero<A> {
 }
 
 export class Succ<A> {
-  readonly _tag: "Succ" = "Succ"
+  readonly _tag: 'Succ' = 'Succ'
   // prettier-ignore
   readonly '_A': A
   // prettier-ignore

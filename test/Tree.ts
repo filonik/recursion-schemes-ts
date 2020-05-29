@@ -1,18 +1,18 @@
-import { Functor2 } from "fp-ts/lib/Functor"
+import { Functor2 } from 'fp-ts/lib/Functor'
 
-declare module "fp-ts/lib/HKT" {
+declare module 'fp-ts/lib/HKT' {
   interface URItoKind2<E, A> {
     Tree: TreeF<E, A>
   }
 }
 
-export const URI = "Tree"
+export const URI = 'Tree'
 
 export type URI = typeof URI
 
 export class Empty<A, R> {
   static value = new Empty<any, any>()
-  readonly _tag: "Empty" = "Empty"
+  readonly _tag: 'Empty' = 'Empty'
   // prettier-ignore
   readonly '_A': R
   // prettier-ignore
@@ -26,7 +26,7 @@ export class Empty<A, R> {
 }
 
 export class Leaf<A, R> {
-  readonly _tag: "Leaf" = "Leaf"
+  readonly _tag: 'Leaf' = 'Leaf'
   // prettier-ignore
   readonly '_A': R
   // prettier-ignore
@@ -40,7 +40,7 @@ export class Leaf<A, R> {
 }
 
 export class Node<A, R> {
-  readonly _tag: "Node" = "Node"
+  readonly _tag: 'Node' = 'Node'
   // prettier-ignore
   readonly '_A': R
   // prettier-ignore
